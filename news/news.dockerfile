@@ -14,4 +14,4 @@ RUN dep ensure
 RUN go get -d -v ./...
 RUN go install -v ./cmd/newsletter-service/.
 
-CMD ["newsletter-service"]
+CMD newsletter-service -dbh=mongo start
