@@ -1,9 +1,6 @@
 FROM golang:1.8
 
-WORKDIR /go/src/app
-COPY /App .
+RUN go get github.com/oloose/bus-ms/...
+WORKDIR /go/src/bus-ms
 
-RUN go get -d -v ./...
-RUN go install -v ./...
-
-CMD ["app"]
+CMD bus-ms start

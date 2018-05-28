@@ -4,10 +4,8 @@ services:
     build:
       context: ./bus
       dockerfile: bus.dockerfile
-    depends_on:
-      - mongo
-    links: 
-      - mongo
+    ports:
+      - 8081:8080
 
   news:
     build:
@@ -32,7 +30,7 @@ services:
     image: mongo-express
     restart: always
     ports:
-      - 8081:8081
+      - 8082:8081
     depends_on:
       - mongo
     links: 
