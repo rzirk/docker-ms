@@ -11,7 +11,7 @@ RUN go get github.com/globalsign/mgo
 
 RUN dep ensure
 
-RUN go get -d -v ./...
-RUN go install -v ./cmd/newsletter-service/.
+RUN go get github.com/oloose/newsletter-ms/...
+WORKDIR /go/src/newsletter-ms
 
-CMD newsletter-service -dbh=mongo start
+CMD newsletter-ms -dbh=mongo start
